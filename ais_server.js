@@ -16,7 +16,7 @@ function onRequest(request, response){
 	} else if(request.url.lastIndexOf(".css") > -1) {
 		response.writeHead(200,{"Content-Type":"text/css"}); // 웹페이지 출력 
 	} else if(request.url.lastIndexOf(".js") > -1) {
-		response.writeHead(200,{"Content-Type":"text/js"}); // 웹페이지 출력 
+		response.writeHead(200,{"Content-Type":"text/javascript"}); // 웹페이지 출력 
 	} else { // file이 존재 하지않을때, 
 		response.writeHead(200,{"Content-Type":"text/html"}); // 웹페이지 출력 
 	}
