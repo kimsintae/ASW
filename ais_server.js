@@ -14,11 +14,9 @@ function onRequest(request, response){
 		fs.createReadStream("./html/index.html").pipe(response); // 같은 디렉토리에 있는 index.html를 response 함 
 		return;
 	} else if(request.url.lastIndexOf(".jpg") > -1 || request.url.lastIndexOf(".jpeg") > -1) {
-		response.writeHead(200,{"Content-Type":"image/jpg"}); // 웹페이지 출력 
+		response.writeHead(200,{"Content-Type":"image/jpeg"}); // 웹페이지 출력 
 	} else if(request.url.lastIndexOf(".png") > -1) {
 		response.writeHead(200,{"Content-Type":"image/png"}); // 웹페이지 출력 
-	} else if(request.url.lastIndexOf(".ico") > -1) {
-		response.writeHead(200,{"Content-Type":"image/ico"}); // 웹페이지 출력 
 	} else if(request.url.lastIndexOf(".css") > -1) {
 		response.writeHead(200,{"Content-Type":"text/css"}); // 웹페이지 출력 
 	} else if(request.url.lastIndexOf(".js") > -1) {
