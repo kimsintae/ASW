@@ -13,17 +13,18 @@ function onRequest(request, response){
 		response.writeHead(200,{"Content-Type":"text/html"}); // 웹페이지 출력 
 		fs.createReadStream("./html/index.html").pipe(response); // 같은 디렉토리에 있는 index.html를 response 함 
 		return;
-	} else if(request.url.lastIndexOf(".jpg") > -1 || request.url.lastIndexOf(".jpeg") > -1) {
-		response.writeHead(200,{"Content-Type":"image/jpeg"}); // 웹페이지 출력 
-	} else if(request.url.lastIndexOf(".png") > -1) {
-		response.writeHead(200,{"Content-Type":"image/png"}); // 웹페이지 출력 
-	} else if(request.url.lastIndexOf(".css") > -1) {
-		response.writeHead(200,{"Content-Type":"text/css"}); // 웹페이지 출력 
-	} else if(request.url.lastIndexOf(".js") > -1) {
-		response.writeHead(200,{"Content-Type":"text/javascript"}); // 웹페이지 출력 
-	} else { // file이 존재 하지않을때, 
-		response.writeHead(200,{"Content-Type":"text/html"}); // 웹페이지 출력 
 	}
+//	else if(request.url.lastIndexOf(".jpg") > -1 || request.url.lastIndexOf(".jpeg") > -1) {
+//		response.writeHead(200,{"Content-Type":"image/jpeg"}); // 웹페이지 출력 
+//	} else if(request.url.lastIndexOf(".png") > -1) {
+//		response.writeHead(200,{"Content-Type":"image/png"}); // 웹페이지 출력 
+//	} else if(request.url.lastIndexOf(".css") > -1) {
+//		response.writeHead(200,{"Content-Type":"text/css"}); // 웹페이지 출력 
+//	} else if(request.url.lastIndexOf(".js") > -1) {
+//		response.writeHead(200,{"Content-Type":"text/javascript"}); // 웹페이지 출력 
+//	} else { // file이 존재 하지않을때, 
+//		response.writeHead(200,{"Content-Type":"text/html"}); // 웹페이지 출력 
+//	}
 	try {
 		fs.createReadStream("./html"+request.url).pipe(response);
 	} catch(e) {
