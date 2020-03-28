@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <title>ASI v1.0</title>
@@ -30,105 +30,18 @@
 </head>
 	
 <body>
-     <!--header-->
-    <nav class="navbar navbar-inverse">
-         <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-              </button>
-              <a class="navbar-brand" href="main.html">AIS</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                        <li><a href="aci_statics.html" alt="statics">사건/사고 통계</a></li>
-                        <li class="active"><a href="map_statics.html" alt="">지도 통계</a></li>
-                        <li><a href="community.html" alt="community">소통</a></li>
-                <li><a href="#"></a></li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>로그인</a></li>
-                  <li><a href="agree.html"><span class="glyphicon glyphicon-log-in"></span>회원가입</a></li>
-              </ul>
-            </div>
-          </div>
-    </nav>
-     <!--// header-->
-    
-    <div class="container-fluid text-center" style="height:100%;">
-        <div class="row content" style="height:100%;">
-           <div class="row" style="margin-bottom:15px;">
-               
+	<header></header>
+              
+    <!-- 컨텐츠 영역 -->
+    <div  id="content" class="col-sm-9" style="padding:0;height:100%;">
+    	<div id="content_01" style="display:none;"></div>
+    	<div id="content_02" style="display:none;"></div>
+    	<div id="content_03" style="display:none;"></div>
+    </div>
 
-                <form class="form-inline map_statics_form" action="/action_page.php">
-                <div class="col-sm-9 form-group" style="padding: 0;">
-                   <ul class="map_statics_option">
-                       <li>
-                            <label>데이터 유형</label>
-                            <select name="acd_type" id="act_type" class="form-control">
-                                <option value="car_act">교통사고</option>
-                                <option value="jaywalking_act">무단횡단 사고</option>
-                                <option value="walking_old_act">보행노인 사고</option>
-                                <option value="walking_kids_act">보행어린이 사고</option>
-                                <option value="school_kids_act">스쿨존 어린이 사고</option>
-                                <option value="bicycle_act">자전거 사고</option>
-                            </select>
-                       </li>
-                       <li>
-                            <label>지역선택</label>
-                            <select name="sido_type" id="sido_type" class="form-control">
-                                <option value="default">지역을 선택해 주세요.</option>
-                                <option value="seoul">서울</option>
-                                <option value="busan">부산</option>
-                                <option value="daegu">대구</option>
-                                <option value="incheon">인천</option>
-                                <option value="kwangju">광주</option>
-                                <option value="daejeon">대전</option>
-                                <option value="ulsan">울산</option>
-                                <option value="kangwon">강원도</option>
-                                <option value="kynggi">경기도</option>
-                                <option value="kyngnam">경상남도</option>
-                                <option value="kyngbuk">경상북도</option>
-                                <option value="jeonnam">전라남도</option>
-                                <option value="jeonbuk">전라북도</option>
-                                <option value="chungnam">충청남도</option>
-                                <option value="chungbuk">충청북도</option> 
-                                <option value="jeju">제주특별자치도</option>
-                            </select>
-                           
-                       </li>
-                       <li>
-                            <label>지역선택2</label>
-                            <select name="sigugun_type" id="sigugun_type" class="form-control">
-                                <option value="default">시도군을 선택해주세요!</option>
-                            </select>
-
-                       </li>
-                       <li style="text-align: right;width: 27%;padding:  0;">
-                           <button type="submit" class="btn btn-default">결과 보기</button>
-                       </li>
-                    </ul>    
-                </div>
-
-                <div class="col-sm-3 form-group" style="display:inline-block;">
-                    
-                </div>
-                </form>
-
-          </div>
-               
-            <!-- 지도영역 -->
-            <div class="col-sm-9" style="padding:0;height:100%;">
-                <div id="vmap" class="map" style="border:1px solid #424242; height:100%;"></div>
-            </div>
-
-            <!-- 분석 그래프 -->
-            <div class="col-sm-2">
-               <div></div>
-            </div>
-        </div><!--// row content -->
+    <!-- 분석 그래프 -->
+    <div class="col-sm-2">
+       <div></div>
     </div>
     
     <!-- 
@@ -136,5 +49,26 @@
         <button id="myLocation" title="현재 지역에 대한 사고 정보를 표시합니다." onclick="getLocation();"><i class="fa fa-map-marker"></i></button>
     -->
 </body>
+<script>
+console.log("Start AIS ...");
+$("header").load("./header.html", function(){});
+$("#content_01").load("./content_01.html", function(){});
+$("#content_02").load("./content_02.html", function(){
+	$("#content_02").show();
+});
+$("#content_03").load("./content_03.html", function(){});
 
+function goContent(menuId){
+	$("#content_01").hide();
+	$("#content_02").hide();
+	$("#content_03").hide();
+	if(menuId == 1) {
+		$("#content_01").show();
+	} else if(menuId == 2) {
+		$("#content_02").show();
+	} else {
+		$("#content_03").show();
+	}
+}
+</script>
 </html>
