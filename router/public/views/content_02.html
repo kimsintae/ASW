@@ -6,11 +6,11 @@
     <div class="container-fluid text-center" style="height:100%;">
     	<div class="row content" style="height:100%;">
         	<div class="row" style="margin-bottom:15px;">
-                <form class="form-inline map_statics_form" action="/action_page.php">
+            	<form class="form-inline map_statics_form" action="/action_page.php">
                 <div class="col-sm-9 form-group" style="padding: 0;">
-                   <ul class="map_statics_option">
-                       <li>
-                            <label>데이터 유형</label>
+                	<ul class="map_statics_option">
+                    	<li>
+                        	<label>데이터 유형</label>
                             <select name="acd_type" id="act_type" class="form-control">
                                 <option value="car_act">교통사고</option>
                                 <option value="jaywalking_act">무단횡단 사고</option>
@@ -60,12 +60,17 @@
                     
                 </div>
                 </form>
-
-          </div>
-	     <!--map-->
-	     <div id="vmap" style="border:1px solid #424242; height:100%;">
-	     맵을 여기에다가............
-	     </div>
-     </div>
+			</div>
+          	<div class="col-sm-9" >
+		    	<!--map-->
+		     	<div id="vmap" class="map" style="border:1px solid #424242; height:100%;">
+		     	맵을 여기에다가............
+		     	</div>
+	     	</div>
+	        <!-- 분석 그래프 -->
+	    	<div class="col-sm-2">
+	       		<div></div>
+	    	</div>
+     	</div>
 	</div>
 </html>
