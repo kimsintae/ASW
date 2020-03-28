@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+</head>
+    <div class="container-fluid text-center" style="height:100%;">
+    	<div class="row content" style="height:100%;">
+        	<div class="row" style="margin-bottom:15px;">
+                <form class="form-inline map_statics_form" action="/action_page.php">
+                <div class="col-sm-9 form-group" style="padding: 0;">
+                   <ul class="map_statics_option">
+                       <li>
+                            <label>데이터 유형</label>
+                            <select name="acd_type" id="act_type" class="form-control">
+                                <option value="car_act">교통사고</option>
+                                <option value="jaywalking_act">무단횡단 사고</option>
+                                <option value="walking_old_act">보행노인 사고</option>
+                                <option value="walking_kids_act">보행어린이 사고</option>
+                                <option value="school_kids_act">스쿨존 어린이 사고</option>
+                                <option value="bicycle_act">자전거 사고</option>
+                            </select>
+                       </li>
+                       <li>
+                            <label>지역선택</label>
+                            <select name="sido_type" id="sido_type" class="form-control">
+                                <option value="default">지역을 선택해 주세요.</option>
+                                <option value="seoul">서울</option>
+                                <option value="busan">부산</option>
+                                <option value="daegu">대구</option>
+                                <option value="incheon">인천</option>
+                                <option value="kwangju">광주</option>
+                                <option value="daejeon">대전</option>
+                                <option value="ulsan">울산</option>
+                                <option value="kangwon">강원도</option>
+                                <option value="kynggi">경기도</option>
+                                <option value="kyngnam">경상남도</option>
+                                <option value="kyngbuk">경상북도</option>
+                                <option value="jeonnam">전라남도</option>
+                                <option value="jeonbuk">전라북도</option>
+                                <option value="chungnam">충청남도</option>
+                                <option value="chungbuk">충청북도</option> 
+                                <option value="jeju">제주특별자치도</option>
+                            </select>
+                           
+                       </li>
+                       <li>
+                            <label>지역선택2</label>
+                            <select name="sigugun_type" id="sigugun_type" class="form-control">
+                                <option value="default">시도군을 선택해주세요!</option>
+                            </select>
+
+                       </li>
+                       <li style="text-align: right;width: 27%;padding:  0;">
+                           <button type="submit" class="btn btn-default">결과 보기</button>
+                       </li>
+                    </ul>    
+                </div>
+
+                <div class="col-sm-3 form-group" style="display:inline-block;">
+                    
+                </div>
+                </form>
+
+          </div>
+	     <!--map-->
+	     <div id="vmap" style="border:1px solid #424242; height:100%;">
+	     맵을 여기에다가............
+	     </div>
+     </div>
+	</div>
+</html>
