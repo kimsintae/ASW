@@ -54,16 +54,15 @@ $("#content_02").load("./content_02.html", function(){
 $("#content_03").load("./content_03.html", function(){});
 
 function goContent(menuId){
+	if(menuId == null | menuId == "") return;
 	$("#content_01").hide();
 	$("#content_02").hide();
 	$("#content_03").hide();
-	if(menuId == 1) {
-		$("#content_01").show();
-	} else if(menuId == 2) {
-		$("#content_02").show();
-	} else {
-		$("#content_03").show();
-	}
+	$("#menu_01").removeClass("active");
+	$("#menu_02").removeClass("active");
+	$("#menu_03").removeClass("active");
+	$("#menu_0"+menuId).addClass("active");
+	$("#content_0"+menuId).show();
 }
 </script>
 </html>
